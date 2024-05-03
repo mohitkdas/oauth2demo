@@ -1,0 +1,28 @@
+# Get an ACCESS token
+# curl localhost:9000/oauth2/token
+#    -H "Content-type: application/x-www-form-urlencoded"
+#    -d "grant_type=authorization_code"
+#    -d "redirect_uri=http://127.0.0.1:9090/login/oauth2/code/taco-admin-client"
+#    -d "code=$code"
+#    -u taco-admin-client:secret
+POST http://localhost:9000/oauth2/token
+Authorization: Basic taco-admin-client secret
+Content-Type: application/x-www-form-urlencoded
+
+grant_type = authorization_code &
+redirect_uri = http://127.0.0.1:9090/login/oauth2/code/taco-admin-client &
+code = zrorffOH1t0G-go-1o215m_TyWhDVF0IVn61dO6NBYJqre_iNTr3rTR6RoSWLBnrGCJv4eNkFAJ2U3OePXQUcVPn0q19zk-JJimM2lcbDDX-bW31BNyGTzV3HsipWCmz
+
+###
+
+# POST for new ACCESS token using REFRESH token
+# curl localhost:9000/oauth2/token
+#    -H "Content-type: application/x-www-form-urlencoded"
+#    -d "grant_type=refresh_token&refresh_token=HOzHA5s..."
+#    -u taco-admin-client:secret
+POST http://localhost:9000/oauth2/token
+Authorization: Basic taco-admin-client secret
+Content-Type: application/x-www-form-urlencoded
+
+grant_type = refresh_token &
+refresh_token = xbOz4jmcK3hHjADjFxgdhfWJD7qSJLCqyYm-XobDaKb4JL0_exIDpQAFdYF2VPGTMTV91o49x0Wug98JgH03kZiznJff61EiwJNewkNAjfgo8_x3ZCttGWYyaDXOmqd9
